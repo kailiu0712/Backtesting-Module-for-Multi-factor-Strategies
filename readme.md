@@ -2,7 +2,7 @@
 
 A lightweight, modular Python project for daily-frequency equity strategy backtesting. It supports: (1) cross-sectional stock selection strategies, (2) constrained portfolio weight assignment with tradability rules, (3) transaction-cost-aware return calculation with turnover, (4) benchmark-relative evaluation, and (5) standardized artifact export (metrics tables + yearly performance + plots + selected holdings table).
 
-This repository is organized as a small Python package (`src/quant_backtest`) plus a CLI entrypoint (`scripts/run_backtest.py`) so you can run experiments reproducibly and extend the codebase cleanly.
+This repository is organized as a small Python package (`src/quant_backtest`) plus a CLI entrypoint (`run_backtest.py`) so you can run experiments reproducibly and extend the codebase cleanly.
 
 ---
 
@@ -28,23 +28,19 @@ This repository is organized as a small Python package (`src/quant_backtest`) pl
 
 ## Repository Structure
 
-```text
-quant_backtest/
-  README.md
-  .env.example
-  requirements.txt
-  src/
-    quant_backtest/
-      __init__.py
-      config.py
-      logging_utils.py
-      io.py
-      metrics.py
-      weighting.py
-      plotting.py
-      backtester.py
-      strategy/
-        __init__.py
-        lowbeta_dividend.py
-  scripts/
-    run_backtest.py
+```
+├── quant_backtest/
+ ├── README.md
+ ├── __init__.py
+ ├── config.py
+ ├── logging_utils.py
+ ├── io.py
+ ├── metrics.py
+ ├── weighting.py
+ ├── plotting.py
+ ├── backtester.py
+ ├── strategy/
+       ├── __init__.py
+       ├── strategy.py
+ └── run_backtest.py
+```
