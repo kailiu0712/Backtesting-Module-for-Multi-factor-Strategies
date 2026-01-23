@@ -7,7 +7,7 @@ from pathlib import Path
 from logging_utils import setup_logging
 from config import BacktestConfig
 from io import load_parquet
-from strategy import build_lowbeta_dividend_strategy
+from strategy import strategy
 from weighting import compute_weights_with_constraints
 from backtester import run_backtest, save_backtest_artifacts
 
@@ -32,7 +32,7 @@ def main():
     df = load_parquet(Path(args.data_parquet))
 
     # 1) Strategy: select + score
-    df = build_lowbeta_dividend_strategy(df)
+    df = build_strategy(df)
 
     # 2) Weighting under tradability constraints
     df = compute_weights_with_constraints(df)
